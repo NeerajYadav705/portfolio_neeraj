@@ -77,9 +77,9 @@ export const Hero = () => {
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
         >
-          <Link href="#about" aria-label="Scroll down">
-            <ArrowDownIcon className="h-10 w-10 text-primary animate-bounce" />
-          </Link>
+          {/* <Link href="#about" aria-label="Scroll down">
+            <ArrowDownIcon className="h-10 w-10 text-primary text-center animate-bounce" />
+          </Link> */}
         </motion.div>
       </div>
     </section>
