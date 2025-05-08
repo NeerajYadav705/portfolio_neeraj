@@ -197,7 +197,7 @@ export const EDUCATION = [
   {
     degree: "Diploma in Information Technology",
     institution: "Government Polytechnic, Dehradun",
-    period: "",
+    period: "2018 – 2021",
     description:
       "Studied core computer science concepts and programming fundamentals with hands-on experience in software development.",
   },
