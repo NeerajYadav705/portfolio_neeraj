@@ -41,7 +41,7 @@ export const Navbar = () => {
           className="flex items-center gap-2 text-primary font-bold text-xl"
         >
           <CodeIcon className="h-6 w-6" />
-          <span>DevPortfolio</span>
+          <span>Neeraj Yadav</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">

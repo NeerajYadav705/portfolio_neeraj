@@ -31,22 +31,22 @@ export const NAV_LINKS = [
 export const SOCIAL_LINKS = [
   {
     name: "GitHub",
-    url: "https://github.com/yourusername",
+    url: "https://github.com/NeerajYadav705",
     icon: GithubIcon,
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://www.linkedin.com/in/neeraj-yadav-017a571b4/",
     icon: LinkedinIcon,
   },
-  {
-    name: "Twitter",
-    url: "https://twitter.com/yourusername",
-    icon: TwitterIcon,
-  },
+  // {
+  //   name: "Twitter",
+  //   url: "https://twitter.com/yourusername",
+  //   icon: TwitterIcon,
+  // },
   {
     name: "Instagram",
-    url: "https://instagram.com/yourusername",
+    url: "https://www.instagram.com/neeraj_yadav_705/",
     icon: InstagramIcon,
   },
 ];
