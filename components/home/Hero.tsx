@@ -82,7 +82,6 @@ const Hero: React.FC = () => {
   }, [showContent]);
 
   const handleDownload = () => {
-    // Replace '/resume.pdf' with your actual PDF path
     const pdfUrl = "/Hero/Neeraj Yadav.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
@@ -119,9 +118,9 @@ const Hero: React.FC = () => {
   }, [showContent]);
 
   return (
-    <>
+    <div className="overflow-x-hidden w-full">
       <div className="svg flex items-center justify-center fixed top-0 left-0 z-[100] w-full h-screen overflow-hidden bg-black">
-        <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+        <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="w-full h-full">
           <defs>
             <mask id="viMask">
               <rect width="100%" height="100%" fill="black" />
@@ -151,16 +150,16 @@ const Hero: React.FC = () => {
       </div>
 
       {showContent && (
-        <div className="main w-full rotate-[-10deg] scale-[1.7]">
-          <div className="landing overflow-hidden relative w-full h-screen bg-black">
-            <div className="imagesdiv relative overflow-hidden w-full h-screen">
+        <div className="main w-full rotate-[-10deg] scale-[1.7] overflow-hidden">
+          <div className="landing relative w-full h-screen bg-black overflow-hidden">
+            <div className="imagesdiv relative w-full h-screen overflow-hidden">
               <img
-                className="absolute sky scale-[1.5] rotate-[-20deg] top-0 left-0 w-full h-full object-cover"
+                className="absolute sky scale-[1.5] rotate-[-20deg] top-0 left-0 w-full h-full object-cover max-w-none"
                 src="/sky.png"
                 alt="Sky"
               />
               <img
-                className="absolute scale-[1.8] rotate-[-3deg] bg top-0 left-0 w-full h-full object-cover"
+                className="absolute scale-[1.8] rotate-[-3deg] bg top-0 left-0 w-full h-full object-cover max-w-none"
                 src="/bg.png"
                 alt="Background"
               />
@@ -198,7 +197,7 @@ const Hero: React.FC = () => {
               </div>
 
               <img
-                className="absolute character -bottom-[150%] right-0 scale-[1] rotate-[-20deg] hidden md:block"
+                className="absolute character -bottom-[150%] right-0 scale-[1] rotate-[-20deg] hidden md:block max-w-none"
                 src="/boybg.png"
                 alt="Character"
               />
@@ -207,13 +206,15 @@ const Hero: React.FC = () => {
             <div className="btmbar text-white absolute bottom-0 left-0 w-full py-4 md:py-15 px-4 md:px-10 bg-gradient-to-t from-black to-transparent">
               <div className="flex gap-4 items-center">
                 <i className="text-2xl md:text-4xl ri-arrow-down-line"></i>
-                <h3 className="text-sm md:text-xl font-[Helvetica_Now_Display]"></h3>
+                <h3 className="text-sm md:text-xl font-[Helvetica_Now_Display]">
+                  Scroll Down
+                </h3>
               </div>
             </div>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

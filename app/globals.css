@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 /* @font-face {
   font-family: "pricedown";
   src: url("/pricedown.otf")
