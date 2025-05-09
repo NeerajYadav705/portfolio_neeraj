@@ -25,12 +25,10 @@ export const Navbar = () => {
 
   return (
     <motion.header
-      className={cn(
-        "fixed top-0 left-0 right-0 py-4 z-40 transition-all duration-300",
-        scrolled
-          ? "bg-background/80 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
-      )}
+    className={cn(
+      "fixed top-0 left-0 right-0 py-4 z-40 transition-all duration-300 bg-background/80 backdrop-blur-md shadow-sm"
+    )}
+    
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}

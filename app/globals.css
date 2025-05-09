@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* @font-face {
+  font-family: "pricedown";
+  src: url("/pricedown.otf")
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+  font-family: "pricedown";
+} */
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -91,3 +102,25 @@ html {
     linear-gradient(to bottom, rgb(var(--foreground-rgb) / 0.1) 1px, transparent 1px);
   background-size: 80px 80px;
 }
+/* 
+
+.landing {
+  perspective: 1000px;
+}
+
+.character {
+  transform-origin: center bottom;
+}
+
+.text-content {
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.bg-layer, .sky {
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+ */
+
+
+
