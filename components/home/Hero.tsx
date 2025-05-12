@@ -9,18 +9,25 @@ import Link from "next/link";
 const Hero: React.FC = () => {
   const [showContent, setShowContent] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // Add dark mode toggle function
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    localStorage.setItem("theme", !isDarkMode ? "dark" : "light");
-  };
-
-  // Check localStorage for saved theme
+  // Initialize on client side only
   useEffect(() => {
+    setIsMounted(true);
     const savedTheme = localStorage.getItem("theme");
     setIsDarkMode(savedTheme === "dark");
   }, []);
+
+  const toggleDarkMode = () => {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    localStorage.setItem("theme", newMode ? "dark" : "light");
+  };
+
+  // Cache busting function that only activates on client
+  const getImageUrl = (path: string) => {
+    return isMounted ? `${path}?v=${Date.now()}` : path;
+  };
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -153,7 +160,7 @@ const Hero: React.FC = () => {
             </mask>
           </defs>
           <image
-            href={isDarkMode ? "/bg.png" : "/bg.png"}
+            href={isDarkMode ? "/darkbg.png" : "/bg.png"}
             width="100%"
             height="100%"
             preserveAspectRatio="xMidYMid slice"
@@ -164,10 +171,10 @@ const Hero: React.FC = () => {
 
       {showContent && (
         <div className="main w-full rotate-[-10deg] scale-[1.7] overflow-hidden">
-          {/* Dark mode toggle button */}
           <button
             onClick={toggleDarkMode}
             className="fixed top-4 right-4 z-50 p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all"
+            aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
           >
             {isDarkMode ? (
               <i className="ri-sun-line text-2xl text-white" />
@@ -180,13 +187,15 @@ const Hero: React.FC = () => {
             <div className="imagesdiv relative w-full h-screen overflow-hidden">
               <img
                 className="absolute sky scale-[1.5] rotate-[-20deg] top-0 left-0 w-full h-full object-cover max-w-none"
-                src={isDarkMode ? "/sky-dark.png" : "/sky.png"}
-                alt="Sky"
+                src={isMounted ? getImageUrl(isDarkMode ? "/sky-dark.png" : "/sky.png") : isDarkMode ? "/sky-dark.png" : "/sky.png"}
+                alt="Sky background"
+                key={`sky-${isDarkMode}`}
               />
               <img
                 className="absolute scale-[1.8] rotate-[-3deg] bg top-0 left-0 w-full h-full object-cover max-w-none"
-                src={isDarkMode ? "/darkbg.png" : "/bg.png"}
-                alt="Background"
+                src={isMounted ? getImageUrl(isDarkMode ? "/darkbg.png" : "/bg.png") : isDarkMode ? "/darkbg.png" : "/bg.png"}
+                alt="Main background"
+                key={`bg-${isDarkMode}`}
               />
 
               <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-full md:w-1/2 px-4 md:pl-20">
@@ -224,7 +233,7 @@ const Hero: React.FC = () => {
               <img
                 className="absolute character -bottom-[150%] right-0 scale-[1] rotate-[-20deg] hidden md:block max-w-none"
                 src="/boybg.png"
-                alt="Character"
+                alt="Character illustration"
               />
             </div>
 

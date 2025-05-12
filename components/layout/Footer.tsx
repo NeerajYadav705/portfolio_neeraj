@@ -60,9 +60,8 @@ export const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t text-center text-muted-foreground">
-          <p>
-            © {new Date().getFullYear()} DevPortfolio. All rights reserved.
-          </p>
+          <p>© {new Date().getFullYear()} DevPortfolio. All rights reserved.</p>
+          <p>Crafted by Neeraj Yadav</p>
         </div>
       </div>
     </footer>
