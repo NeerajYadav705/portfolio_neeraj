@@ -140,7 +140,11 @@ const Hero: React.FC = () => {
   return (
     <div className="overflow-x-hidden w-full">
       <div className="svg flex items-center justify-center fixed top-0 left-0 z-[100] w-full h-screen overflow-hidden bg-black">
-        <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="w-full h-full">
+        <svg
+          viewBox="0 0 800 600"
+          preserveAspectRatio="xMidYMid slice"
+          className="w-full h-full"
+        >
           <defs>
             <mask id="viMask">
               <rect width="100%" height="100%" fill="black" />
@@ -174,7 +178,9 @@ const Hero: React.FC = () => {
           <button
             onClick={toggleDarkMode}
             className="fixed top-4 right-4 z-50 p-3 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all"
-            aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={
+              isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+            }
           >
             {isDarkMode ? (
               <i className="ri-sun-line text-2xl text-white" />
@@ -187,13 +193,25 @@ const Hero: React.FC = () => {
             <div className="imagesdiv relative w-full h-screen overflow-hidden">
               <img
                 className="absolute sky scale-[1.5] rotate-[-20deg] top-0 left-0 w-full h-full object-cover max-w-none"
-                src={isMounted ? getImageUrl(isDarkMode ? "/sky-dark.png" : "/sky.png") : isDarkMode ? "/sky-dark.png" : "/sky.png"}
+                src={
+                  isMounted
+                    ? getImageUrl(isDarkMode ? "/sky-dark.png" : "/sky.png")
+                    : isDarkMode
+                    ? "/sky-dark.png"
+                    : "/sky.png"
+                }
                 alt="Sky background"
                 key={`sky-${isDarkMode}`}
               />
               <img
                 className="absolute scale-[1.8] rotate-[-3deg] bg top-0 left-0 w-full h-full object-cover max-w-none"
-                src={isMounted ? getImageUrl(isDarkMode ? "/darkbg.png" : "/bg.png") : isDarkMode ? "/darkbg.png" : "/bg.png"}
+                src={
+                  isMounted
+                    ? getImageUrl(isDarkMode ? "/darkbg.png" : "/bg.png")
+                    : isDarkMode
+                    ? "/darkbg.png"
+                    : "/bg.png"
+                }
                 alt="Main background"
                 key={`bg-${isDarkMode}`}
               />
@@ -207,7 +225,7 @@ const Hero: React.FC = () => {
                   <h2 className="text-2xl md:text-4xl text-gray-300">
                     Full Stack Developer
                   </h2>
-                  <p className="text-base md:text-xl text-gray-400 max-w-lg">
+                  <p className="text-base md:text-xl text-gray-200 max-w-lg">
                     I specialize in building modern web applications using
                     React, Next.js, and Node.js. Passionate about creating
                     clean, efficient, and user-friendly solutions that solve

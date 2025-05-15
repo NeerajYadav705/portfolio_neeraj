@@ -18,7 +18,7 @@ export const ProjectsGrid = () => {
     : PROJECTS;
 
   return (
-    <section className="py-16">
+    <section className="py-28">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-12 space-y-4"
