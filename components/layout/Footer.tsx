@@ -13,7 +13,7 @@ export const Footer = () => {
               className="flex items-center gap-2 text-primary font-bold text-xl"
             >
               <CodeIcon className="h-6 w-6" />
-              <span>Neeraj Yadav</span>
+              <span>NeerajYadav</span>
             </Link>
             <p className="text-muted-foreground">
               Full stack developer passionate about creating beautiful and
